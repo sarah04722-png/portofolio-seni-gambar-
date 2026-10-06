@@ -1,0 +1,290 @@
+```html
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Aulia - Galeri & Portofolio Seni Gambar</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gallery: {
+                            50: '#faf8f5',
+                            100: '#f3ede2',
+                            200: '#e5d7c3',
+                            800: '#2c221e',
+                            900: '#1a1310',
+                            gold: '#d4af37',
+                            'gold-hover': '#b59226',
+                            accent: '#8b5a2b'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #f39c12 0%, #d4af37 50%, #f1c40f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+        }
+        .art-card:hover .art-overlay {
+            opacity: 1;
+        }
+        .canvas-container {
+            touch-action: none;
+        }
+    </style>
+</head>
+<body class="bg-gallery-900 text-stone-200 font-sans antialiased selection:bg-gallery-gold selection:text-gallery-900">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-gallery-900/90 backdrop-blur-md border-b border-stone-800/80 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border-2 border-gallery-gold flex items-center justify-center bg-gallery-800 text-gallery-gold font-serif font-bold text-xl group-hover:scale-105 transition-transform">
+                    SA
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-lg text-stone-100 tracking-wider block">SARAH AULIA</span>
+                    <span class="text-xs text-gallery-gold tracking-widest uppercase block -mt-1">Fine Art & Illustration</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-gallery-gold transition-colors">Tentang Saya</a>
+                <a href="#gallery" class="hover:text-gallery-gold transition-colors">Galeri Karya</a>
+                <a href="#awards" class="hover:text-gallery-gold transition-colors">Prestasi & Trofi</a>
+                <a href="#sketchpad" class="hover:text-gallery-gold transition-colors">Studio Mini</a>
+                <a href="#commission" class="hover:text-gallery-gold transition-colors">Estimasi Komisi</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-gold-gradient text-gallery-900 font-semibold hover:shadow-lg hover:shadow-gallery-gold/20 transition-all transform hover:-translate-y-0.5">
+                    Mulai Komisi <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-stone-300 hover:text-gallery-gold focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gallery-900 border-b border-stone-800 px-6 py-6 space-y-4">
+            <a href="#about" class="block text-stone-200 hover:text-gallery-gold text-lg">Tentang Saya</a>
+            <a href="#gallery" class="block text-stone-200 hover:text-gallery-gold text-lg">Galeri Karya</a>
+            <a href="#awards" class="block text-stone-200 hover:text-gallery-gold text-lg">Prestasi & Trofi</a>
+            <a href="#sketchpad" class="block text-stone-200 hover:text-gallery-gold text-lg">Studio Mini</a>
+            <a href="#commission" class="block text-stone-200 hover:text-gallery-gold text-lg">Estimasi Komisi</a>
+            <a href="#contact" class="block text-center py-3 rounded-xl bg-gold-gradient text-gallery-900 font-bold">
+                Hubungi & Pesan Karya
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen pt-28 pb-16 flex items-center justify-center relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-stone-800/50 via-gallery-900 to-black">
+        <!-- Decorative Ambient Blur -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Intro Column -->
+                <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gallery-gold/30 bg-gallery-800/60 backdrop-blur text-gallery-gold text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-palette"></i> Seniman Visual & Ilustrator
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl font-serif font-bold text-stone-100 leading-tight">
+                        Menghidupkan Imajinasi dalam <span class="gold-gradient">Goresan Visual</span>
+                    </h1>
+
+                    <p class="text-stone-400 text-lg sm:text-xl max-w-2xl font-light leading-relaxed">
+                        Halo! Saya <strong class="text-stone-200">Sarah Aulia</strong>. Saya mengekspresikan cerita, emosi, dan keindahan melalui bermacam-macam teknik seni gambar — dari realisme klasik hingga konsep ilustrasi digital.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
+                        <a href="#gallery" class="px-8 py-4 rounded-full bg-gold-gradient text-gallery-900 font-bold text-base hover:shadow-xl hover:shadow-gallery-gold/20 transition-all transform hover:-translate-y-1">
+                            Jelajahi Karya <i class="fa-solid fa-images ml-2"></i>
+                        </a>
+                        <a href="#awards" class="px-8 py-4 rounded-full border border-stone-700 bg-gallery-800/50 hover:bg-stone-800 text-stone-200 font-medium transition-all">
+                            Trofi & Penghargaan <i class="fa-solid fa-trophy ml-2 text-gallery-gold"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Metrics -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-stone-800 text-center md:text-left">
+                        <div>
+                            <span class="block text-3xl font-serif font-bold text-gallery-gold">15+</span>
+                            <span class="text-xs text-stone-400 uppercase tracking-wider">Penghargaan & Trofi</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-serif font-bold text-gallery-gold">120+</span>
+                            <span class="text-xs text-stone-400 uppercase tracking-wider">Karya Seni Selesai</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-serif font-bold text-gallery-gold">6+</span>
+                            <span class="text-xs text-stone-400 uppercase tracking-wider">Gaya & Medium Seni</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Artwork Featured Visual -->
+                <div class="md:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden border-2 border-stone-700/60 shadow-2xl bg-stone-800 p-3 group">
+                        <!-- Frame inner -->
+                        <div class="w-full h-full rounded-xl overflow-hidden relative">
+                            <!-- SVG Generated Masterpiece Artwork Preview -->
+                            <svg class="w-full h-full bg-stone-900 transition-transform duration-700 group-hover:scale-105" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="400" height="500" fill="#181512"/>
+                                <!-- Abstract Art Background -->
+                                <circle cx="200" cy="200" r="140" fill="#d4af37" opacity="0.15"/>
+                                <path d="M50 400 C 150 200, 250 500, 350 300" stroke="#d4af37" stroke-width="3" opacity="0.4"/>
+                                <path d="M20 300 C 120 100, 280 400, 380 200" stroke="#8b5a2b" stroke-width="2" opacity="0.5"/>
+                                
+                                <!-- Realistic Face Line Silhouette -->
+                                <path d="M180 120 Q 220 120, 240 160 Q 250 180, 240 220 C 230 250, 210 270, 220 300 C 225 320, 210 350, 180 370" stroke="#e5d7c3" stroke-width="4" stroke-linecap="round" fill="none"/>
+                                <path d="M200 200 Q 225 200, 230 215 T 200 220 Z" fill="#d4af37" opacity="0.8"/>
+                                <path d="M170 240 Q 210 250, 190 270" stroke="#e5d7c3" stroke-width="3" fill="none"/>
+                                <circle cx="215" cy="180" r="8" fill="#ffffff" opacity="0.9"/>
+                                <path d="M140 180 Q 180 100, 260 140 Q 300 200, 280 260 C 260 320, 180 380, 130 320 Z" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+                                
+                                <!-- Watercolor Splatters effect simulation -->
+                                <circle cx="120" cy="150" r="25" fill="#a8622c" opacity="0.3"/>
+                                <circle cx="280" cy="320" r="35" fill="#d4af37" opacity="0.2"/>
+                                <circle cx="290" cy="130" r="15" fill="#e5d7c3" opacity="0.25"/>
+                            </svg>
+
+                            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/70 to-transparent">
+                                <span class="text-xs text-gallery-gold uppercase tracking-widest font-semibold">Karya Unggulan</span>
+                                <h3 class="text-xl font-serif text-white font-bold">"Harmoni Jiwa & Alam"</h3>
+                                <p class="text-xs text-stone-300 mt-1">Mixed Media & Digital Finish • 2025</p>
+                            </div>
+                        </div>
+
+                        <!-- Trophy Badge Floating -->
+                        <div class="absolute -top-4 -right-4 bg-gallery-800 border border-gallery-gold px-4 py-2 rounded-2xl shadow-xl flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gallery-gold/20 flex items-center justify-center text-gallery-gold">
+                                <i class="fa-solid fa-trophy text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-stone-400 block font-medium">Juara 1</span>
+                                <span class="text-sm font-bold text-stone-100 block">Seni Gambar Nasional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-stone-950 relative border-t border-stone-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Image / Photo Frame -->
+                <div class="md:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-stone-800 bg-stone-900 p-2 shadow-2xl">
+                        <!-- Artist Visual Representation -->
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-stone-800 relative flex items-center justify-center text-stone-500">
+                            <svg class="w-full h-full" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="300" height="400" fill="#221c18"/>
+                                <!-- Soft Studio Background -->
+                                <circle cx="150" cy="150" r="100" fill="#d4af37" opacity="0.1"/>
+                                <!-- Artist Silhouette holding paintbrush -->
+                                <path d="M150 120 C 120 120, 100 145, 100 180 C 100 215, 120 230, 150 230 C 180 230, 200 215, 200 180 C 200 145, 180 120, 150 120 Z" fill="#382e28"/>
+                                <path d="M80 380 C 80 290, 110 260, 150 260 C 190 260, 220 290, 220 380 Z" fill="#2d2420"/>
+                                <path d="M190 240 L260 170" stroke="#d4af37" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M260 170 L270 160" stroke="#e5d7c3" stroke-width="6" stroke-linecap="round"/>
+                            </svg>
+                            <div class="absolute inset-0 bg-gradient-to-t from-gallery-900 via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-6 left-6 right-6 text-center">
+                                <h4 class="text-xl font-serif text-stone-100 font-bold">SARAH AULIA</h4>
+                                <p class="text-xs text-gallery-gold mt-1">Visual Artist & Drafter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text & Philosophy -->
+                <div class="md:col-span-7 space-y-6">
+                    <span class="text-gallery-gold text-sm font-semibold tracking-widest uppercase">Perjalanan Seni</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-100 leading-snug">
+                        "Seni gambar adalah bahasa tanpa kata yang mampu menyentuh relung perasaan terdalam."
+                    </h2>
+                    
+                    <p class="text-stone-300 leading-relaxed">
+                        Sejak usia muda, saya memiliki hasrat yang sangat mendalam terhadap dunia seni gambar. Bagi saya, pensil dan kanvas bukan sekadar alat, melainkan jendela tempat saya menuangkan ide, cerita, serta perspektif unik tentang kehidupan.
+                    </p>
+
+                    <p class="text-stone-400 leading-relaxed">
+                        Karya saya sangat bervariasi. Saya tidak membatasi diri pada satu media saja. Saya menjelajahi berbagai ranah seni seperti **Realisme Pensil/Charcoal, Ilustrasi Digital, Cat Air (Watercolor), Ekspresionisme, hingga Desain Karakter & Konsep**. Eksperimen ini membuahkan berbagai prestasi dan trofi di tingkat lokal maupun nasional.
+                    </p>
+
+                    <!-- Mediums / Skills Tag Cloud -->
+                    <div class="pt-4">
+                        <h4 class="text-sm font-semibold text-stone-200 uppercase tracking-wider mb-3">Keahlian & Medium Seni:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-stone-800 text-stone-300 text-xs border border-stone-700/80"><i class="fa-solid fa-pencil text-gallery-gold mr-1"></i> Sketsa & Charcoal</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-stone-800 text-stone-300 text-xs border border-stone-700/80"><i class="fa-solid fa-paintbrush text-gallery-gold mr-1"></i> Realisme Klasik</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-stone-800 text-stone-300 text-xs border border-stone-700/80"><i class="fa-solid fa-laptop-code text-gallery-gold mr-1"></i> Digital Illustration (Procreate/Photoshop)</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-stone-800 text-stone-300 text-xs border border-stone-700/80"><i class="fa-solid fa-droplet text-gallery-gold mr-1"></i> Cat Air & Acrylic</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-stone-800 text-stone-300 text-xs border border-stone-700/80"><i class="fa-solid fa-user-ninja text-gallery-gold mr-1"></i> Desain Karakter</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-stone-800 text-stone-300 text-xs border border-stone-700/80"><i class="fa-solid fa-eye text-gallery-gold mr-1"></i> Seni Surealisme</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-gallery-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <span class="text-gallery-gold text-sm font-semibold tracking-widest uppercase"><i class="fa-solid fa-palette"></i> Eksplorasi Visual</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-stone-100">Galeri Portofolio</h2>
+                <p class="text-stone-400 text-base">
+                    Nikmati koleksi bermacam-macam seni gambar karya Sarah Aulia. Gunakan filter di bawah untuk melihat karya berdasarkan kategori.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12" id="filterContainer">
+                <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium border transition-all bg-gallery-gold text-gallery-900 border-gallery-gold shadow-lg shadow-gallery-gold/20">
+                    Semua Karya
+                </button>
+                <button data-filter="realism" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-stone-700 bg-stone-800/80 text-stone-300 hover:border-gallery-gold transition-all">
+                    Realisme & Potret
+                </button>
+                <button data-filter="digital" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-stone-700 bg-stone-800/80 text-stone-300 hover:border-gallery-gold transition-all">
+                    Ilustrasi Digital
+                </button>
+                <button data-filter="sketch" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-stone-
